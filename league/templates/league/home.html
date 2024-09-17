@@ -1,0 +1,10 @@
+{% extends 'league/base.html' %}
+<!-- -->
+{% block content %}
+<h1>Newbury 40K League Home</h1>
+<p>Name | Faction | League Points | Games Played | League Position</p>
+{% for player in players %}
+<p>{{ player.name }} | {{ player.faction }} | {{ player.league_points }} | {{ player.games_played }} |
+    {{ player.league_position }}</p>
+{% endfor %}
+{% endblock content %}
