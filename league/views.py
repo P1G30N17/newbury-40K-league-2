@@ -27,7 +27,7 @@ players = [
         'faction': 'Tyranids',
         'league_points': '299',
         'games_played': '3',
-        'league_position': '2'
+        'league_position': '3'
     },
 ]
 

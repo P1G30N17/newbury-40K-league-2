@@ -2,9 +2,28 @@
 <!-- -->
 {% block content %}
 <h1>Newbury 40K League Home</h1>
-<p>Name | Faction | League Points | Games Played | League Position</p>
-{% for player in players %}
-<p>{{ player.name }} | {{ player.faction }} | {{ player.league_points }} | {{ player.games_played }} |
-    {{ player.league_position }}</p>
-{% endfor %}
+
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">League Position</th>
+            <th scope="col">Name</th>
+            <th scope="col">Faction</th>
+            <th scope="col">League Points</th>
+            <th scope="col">Games Played</th>
+          </tr>
+        </thead>
+        {% for player in players %}
+        <tbody>
+          <tr>
+            <th scope="row">{{ player.league_position }}</th>
+            <td>{{ player.name }}</td>
+            <td>{{ player.faction }}</td>
+            <td>{{ player.league_points }}</td>
+            <td>{{ player.games_played }}</td>
+          </tr>
+        </tbody>
+        {% endfor %}
+      </table>
+    
 {% endblock content %}
