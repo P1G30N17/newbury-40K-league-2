@@ -1,4 +1,5 @@
 from django.shortcuts import render, HttpResponse
+from . import models
 
 players = [
     {
@@ -33,6 +34,7 @@ players = [
 
 # Create your views here.
 def home(request):
+    players = models.Player.objects.all()
     context = {
         'players': players
     }
