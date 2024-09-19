@@ -11,9 +11,3 @@ class Player(models.Model):
     def __str__(self):
         return self.name
 
-# class League(models.Model):
-#     user_ID = models.OneToOneField(
-#         Player,
-#         on_delete=models.CASCADE,
-#         primary_key=True,
-#     )
