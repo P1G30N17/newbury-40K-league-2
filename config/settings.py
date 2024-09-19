@@ -26,9 +26,9 @@ SECRET_KEY = 'django-insecure-+@_lx@a1)j$oh+kj%givt117z6m(dd+&ram$=e4x$p_*%qm7v2
 DEBUG = True
 
 ALLOWED_HOSTS = ['8000-p1g30n17-newbury40kleag-smjoh8wx3pp.ws.codeinstitute-ide.net']
-CSRF_TRUSTED_ORIGINS = ['https://8000-p1g30n17-newbury40kleag-smjoh8wx3pp.ws.codeinstitute-ide.net/']
-CSRF_ALLOWED_ORIGINS = ['https://8000-p1g30n17-newbury40kleag-smjoh8wx3pp.ws.codeinstitute-ide.net/']
-CORS_ORIGINS_WHITELIST = ['https://8000-p1g30n17-newbury40kleag-smjoh8wx3pp.ws.codeinstitute-ide.net/']
+CSRF_TRUSTED_ORIGINS = ['https://8000-p1g30n17-newbury40kleag-smjoh8wx3pp.ws.codeinstitute-ide.net']
+CSRF_ALLOWED_ORIGINS = ['https://8000-p1g30n17-newbury40kleag-smjoh8wx3pp.ws.codeinstitute-ide.net']
+CORS_ORIGINS_WHITELIST = ['https://8000-p1g30n17-newbury40kleag-smjoh8wx3pp.ws.codeinstitute-ide.net']
 
 
 # Application definition
