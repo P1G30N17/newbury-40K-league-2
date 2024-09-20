@@ -9,7 +9,7 @@ def register(request):
         if form.is_valid():
             form.save()
             username = form.cleaned_data.get('username')
-            messages.success(request, f"{username}, your account has been created!")
+            messages.success(request, f"{username}, your account has been created, please log in.")
             return redirect('home')
     else: 
         form = forms.UserRegistrationForm()

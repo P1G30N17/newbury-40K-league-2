@@ -6,15 +6,15 @@
     <form method="POST">
         {% csrf_token %} 
         <fieldset class="form-group">
-            <legend class="border-bottom mb-4">Register for the League!</legend>
+            <legend class="border-bottom mb-4">Log In!</legend>
             {{ form|crispy }}
         </fieldset>
         <div class="form-group py-3">
-            <input class="btn btn-outline-primary" type="submit" value="Register">
+            <input class="btn btn-outline-primary" type="submit" value="Log In">
         </div>
     </form>
     <div class="border-top pt-3">
-        <a href="#">Already registered? Log In here.</a>
+        <a href="#">Don't have an account? Register here.</a>
     </div>
 </div>
 {% endblock content %}
