@@ -45,19 +45,31 @@
                         </ul>
                     </li>
                 </ul>
-                <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>
+                <div class="navbar-nav">
+                    {% if user.is_authenticated  %}
+                    <li class="nav-item">
+                        <form method="post" action="{% url 'user-logout' %}">
+                            {% csrf_token %}
+                            <button type="submit" class="nav-link"
+                                style="background: none; border: none; cursor: pointer;">
+                                Logout {{user.get_username}}
+                            </button>
+                        </form>
+                    </li>
+                    {% else %}
+                    <a class="nav-item nav-link" href="{% url 'user-login' %}">Login</a>
+                    <a class="nav-item nav-link" href="{% url 'user-registration' %}">Register</a>
+                    {% endif %}
+                </div>
             </div>
         </div>
     </nav>
 
     <div class="container col-8 mt-4">
         {% if messages %}
-            {% for message in messages %}
-                <div class="alert alert-{{ message.tags }}">{{ message }}</div>
-            {% endfor %}
+        {% for message in messages %}
+        <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+        {% endfor %}
         {% endif %}
         {% block content %}
         {% endblock content %}
