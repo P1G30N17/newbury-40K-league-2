@@ -1,6 +1,6 @@
 from django.shortcuts import render, HttpResponse
-from django.views.generic import ListView, DetailView, CreateView
-from django.contrib.auth.mixins import LoginRequiredMixin
+from django.views.generic import ListView, DetailView, CreateView, UpdateView
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 
 from . import models
 
@@ -27,7 +27,18 @@ class RegisterView(LoginRequiredMixin, CreateView):
     def form_valid(self, form):
         form.instance.user_id = self.request.user
         return super().form_valid(form)
-        
 
+class PlayerUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
+    model = models.Player
+    fields = ['name', 'faction']
+
+    def test_func(self):
+        player = self.get_object()
+        return self.request.user == player.user_id
+
+    def form_valid(self, form):
+        form.instance.user_id = self.request.user
+        return super().form_valid(form)
+        
 def about(request):
     return render(request, "league/about.html", {'title': 'About the Newbury 40K League'})
