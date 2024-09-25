@@ -1,6 +1,7 @@
 from django.shortcuts import render, HttpResponse
-from django.views.generic import ListView, DetailView, CreateView, UpdateView
+from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
+from django.urls import reverse_lazy
 
 from . import models
 
@@ -19,6 +20,7 @@ class PlayerListView(ListView):
 
 class PlayerDetailView(DetailView):
     model = models.Player
+    fields = ['name', 'faction']
 
 class RegisterView(LoginRequiredMixin, CreateView):
     model = models.Player
@@ -39,6 +41,14 @@ class PlayerUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     def form_valid(self, form):
         form.instance.user_id = self.request.user
         return super().form_valid(form)
+
+class PlayerDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
+    model = models.Player
+    success_url = reverse_lazy('home')
+
+    def test_func(self):
+        player = self.get_object()
+        return self.request.user == player.user_id
         
 def about(request):
     return render(request, "league/about.html", {'title': 'About the Newbury 40K League'})

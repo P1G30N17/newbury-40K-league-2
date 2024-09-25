@@ -35,13 +35,14 @@
                             aria-expanded="false">
                             League
                         </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="{% url 'user-profile' %}">My Profile</a></li>
+                        <ul class="dropdown-menu">                           
+                            <li><a class="dropdown-item" href="{% url 'player-detail' 1 %}">My Profile</a></li>
                             <li><a class="dropdown-item" href="#">My Matchups</a></li>
+                            <li><a class="dropdown-item" href="#">Submit Results</a></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
-                            <li><a class="dropdown-item" href="#">Submit Results</a></li>
+                            <li><a class="dropdown-item" href="{% url 'player-register' %}">Register for League</a></li>                         
                         </ul>
                     </li>
                 </ul>
