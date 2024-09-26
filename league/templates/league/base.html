@@ -35,8 +35,12 @@
                             aria-expanded="false">
                             League
                         </a>
-                        <ul class="dropdown-menu">                           
-                            <li><a class="dropdown-item" href="{% url 'player-detail' player.pk %}">My Profile</a></li>
+                        <ul class="dropdown-menu">  
+                            {% if request.user.is_authenticated  %}                         
+                            <li><a class="dropdown-item" href="{% url 'player-detail' request.user.id %}">My Profile</a></li>
+                            {% else %}
+                            <li><a class="dropdown-item" href="{% url 'user-login' %}">My Profile</a></li>
+                            {% endif %}
                             <li><a class="dropdown-item" href="#">My Matchups</a></li>
                             <li><a class="dropdown-item" href="#">Submit Results</a></li>
                             <li>
