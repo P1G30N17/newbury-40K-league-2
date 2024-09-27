@@ -7,7 +7,10 @@ class Player(models.Model):
     user_id = models.OneToOneField(User, on_delete=models.CASCADE)
     name = models.CharField(max_length=50)
     email = models.EmailField(max_length=100)
-    faction = models.TextField()
+    faction = models.CharField(max_length=50)
+    games_played = models.PositiveIntegerField(default=0)
+    league_points = models.PositiveIntegerField(default=0)
+    victory_points_tally = models.PositiveIntegerField(default=0)
 
     def get_absolute_url(self):
         return reverse("player-detail", kwargs={"pk": self.pk})

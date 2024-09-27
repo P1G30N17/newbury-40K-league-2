@@ -20,7 +20,7 @@ class PlayerListView(ListView):
 
 class PlayerDetailView(DetailView):
     model = models.Player
-    fields = ['name', 'faction']
+    fields = ['name', 'faction', 'games_played', 'league_points', 'victory_points_tally']
 
 class RegisterView(LoginRequiredMixin, CreateView):
     model = models.Player
@@ -49,6 +49,8 @@ class PlayerDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     def test_func(self):
         player = self.get_object()
         return self.request.user == player.user_id
+
+
         
 def about(request):
     return render(request, "league/about.html", {'title': 'About the Newbury 40K League'})
