@@ -27,7 +27,7 @@ class RegisterView(LoginRequiredMixin, CreateView):
     fields = ['name', 'faction']
 
     def form_valid(self, form):
-        form.instance.user_id = self.request.user
+        form.instance.user = self.request.user
         return super().form_valid(form)
 
 class PlayerUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
@@ -36,10 +36,10 @@ class PlayerUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
 
     def test_func(self):
         player = self.get_object()
-        return self.request.user == player.user_id
+        return self.request.user == player.user
 
     def form_valid(self, form):
-        form.instance.user_id = self.request.user
+        form.instance.user = self.request.user
         return super().form_valid(form)
 
 class PlayerDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
@@ -48,7 +48,7 @@ class PlayerDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 
     def test_func(self):
         player = self.get_object()
-        return self.request.user == player.user_id
+        return self.request.user == player.user
 
 class SubmitResultsView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model = models.Player
@@ -57,22 +57,12 @@ class SubmitResultsView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
 
     def test_func(self):
         player = self.get_object()
-        return self.request.user == player.user_id
+        return self.request.user == player.user
 
     def form_valid(self, form):
-        form.instance.user_id = self.request.user
+        form.instance.user = self.request.user
         return super().form_valid(form)
 
-    def update_score(request):
-        if request.method == 'POST' and form.is_valid():
-            player_score = request.POST.get('player-score', None)
-            self.victory_points_tally += player_score
-            self.games_played += 1
-            messages.success(request, 'Success! VP has been added!')
-            form.save()
-        else:
-            messages.error(request, 'Oh no! There was an error when you were adding your VP!')
-    
     
 def about(request):
     return render(request, "league/about.html", {'title': 'About the Newbury 40K League'})
