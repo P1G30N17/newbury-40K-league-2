@@ -6,15 +6,18 @@
     <form method="POST">
         {% csrf_token %}
         <fieldset class="form-group">
-            <legend class="border-bottom mb-4">Submit your game results!</legend>
-            {{ form|crispy }}
+            <legend class="border-bottom mb-4">Submit your game results {{ object.name }}!</legend>
         </fieldset>
-        <div class="form-group">
-            <label for="player-score">Your score:</label>
-            <input type="number" class="form-control" id="player-score" name="player-score" min="0" max="100">
+        <div class="col-auto">
+            <label for="playerFaction" class="visually-hidden">Faction</label>
+            <input type="text" readonly class="form-control-plaintext" id="playerFaction" value="{{ object.faction }}">
+        </div>
+        <div class="col-auto">
+            <label for="results" class="visually-hidden">Results</label>
+            <input type="number" class="form-control" id="results" name="results" min="1" max="100">
         </div>
         <div class="form-group py-3">
-            <input class="btn btn-outline-primary" type="submit" value="Submit">
+            <input class="btn btn-outline-primary" type="submit" value="Submit Results">
         </div>
     </form>
     <div class="border-top pt-3">

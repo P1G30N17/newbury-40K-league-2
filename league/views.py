@@ -1,6 +1,7 @@
 from django.shortcuts import render, HttpResponse
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
+from django.contrib import messages
 from django.urls import reverse_lazy
 
 from . import models
@@ -53,14 +54,27 @@ class PlayerDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 class SubmitResultsView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model = models.Player
     template_name = 'league/submitresults.html'
-    fields = ['name', 'faction']
+    fields = ['victory_points_tally', 'games_played']
 
     def test_func(self):
         player = self.get_object()
         return self.request.user == player.user
+    
+    def update_stats(request):
+        if request.method == 'POST':
+            results = request.POST['results']
+            score = self(results=results)
+            self.games_played += 1
+            self.victory_points_tally += score
+            self.save
+            messages.success("Results submitted successfully")
+            return redirect("league/home.html")
+        else:
+            return render(request, "league/home.html")
 
     def form_valid(self, form):
         form.instance.user = self.request.user
+        update_stats()
         return super().form_valid(form)
 
     
