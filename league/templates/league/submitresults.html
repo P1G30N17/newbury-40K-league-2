@@ -3,19 +3,20 @@
 <!-- -->
 {% block content %}
 <div class="container">
-    <form method="POST">
+    <form action="{% url 'submit-results' user.id %}" method="POST">
         {% csrf_token %}
         <fieldset class="form-group">
             <legend class="border-bottom mb-4">Submit your game results {{ object.name }}!</legend>
+            <div class="col-auto">
+                <label for="playerFaction" class="visually-hidden">Faction</label>
+                <input type="text" readonly class="form-control-plaintext" id="playerFaction"
+                    value="{{ object.faction }}">
+            </div>
+            <div class="col-auto">
+                <label for="results" class="visually-hidden">Results</label>
+                <input type="number" class="form-control" id="results" name="results" min="1" max="100">
+            </div>
         </fieldset>
-        <div class="col-auto">
-            <label for="playerFaction" class="visually-hidden">Faction</label>
-            <input type="text" readonly class="form-control-plaintext" id="playerFaction" value="{{ object.faction }}">
-        </div>
-        <div class="col-auto">
-            <label for="results" class="visually-hidden">Results</label>
-            <input type="number" class="form-control" id="results" name="results" min="1" max="100">
-        </div>
         <div class="form-group py-3">
             <input class="btn btn-outline-primary" type="submit" value="Submit Results">
         </div>

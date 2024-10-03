@@ -1,6 +1,7 @@
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render, HttpResponse, redirect
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
+from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.urls import reverse_lazy
 
@@ -51,32 +52,13 @@ class PlayerDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
         player = self.get_object()
         return self.request.user == player.user
 
-class SubmitResultsView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
-    model = models.Player
-    template_name = 'league/submitresults.html'
-    fields = ['victory_points_tally', 'games_played']
-
-    def test_func(self):
-        player = self.get_object()
-        return self.request.user == player.user
-    
-    def update_stats(request):
-        if request.method == 'POST':
-            results = request.POST['results']
-            score = self(results=results)
-            self.games_played += 1
-            self.victory_points_tally += score
-            self.save
-            messages.success("Results submitted successfully")
-            return redirect("league/home.html")
-        else:
-            return render(request, "league/home.html")
-
-    def form_valid(self, form):
-        form.instance.user = self.request.user
-        update_stats()
-        return super().form_valid(form)
-
+@login_required()
+def submit_results(request, pk):
+    if request.method == 'POST':
+        player_vp = request.POST.get('results')
+        models.Player.objects.update(player_vp=player_vp)
+        return redirect('home')
+    return render(request, 'league/submitresults.html')
     
 def about(request):
     return render(request, "league/about.html", {'title': 'About the Newbury 40K League'})
