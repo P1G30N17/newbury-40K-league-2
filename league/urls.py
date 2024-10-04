@@ -7,8 +7,7 @@ urlpatterns = [
     path('player/register/', views.RegisterView.as_view(), name="player-register"),
     path('player/<int:pk>/update', views.PlayerUpdateView.as_view(), name="player-update"),
     path('player/<int:pk>/delete', views.PlayerDeleteView.as_view(), name="player-delete"),
-    # allow this path once user authentication is added to view
-    # path('player/<int:pk>/submitresults', views.SubmitResultsView.as_view(), name="submit-results"),
-    path('player/submitresults', views.SubmitResultsView.as_view(), name="submit-results"),
+    path('player/<int:id>/submitresults', views.update, name="update"),
+    path('player/<int:id>/submit', views.submit, name='submit'),
     path('about/', views.about, name="about"),
 ]

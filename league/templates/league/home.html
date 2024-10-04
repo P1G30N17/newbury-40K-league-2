@@ -12,7 +12,6 @@
             <th scope="col">League Points</th>
             <th scope="col">Total VP</th>
             <th scope="col">Games Played</th>
-            <th scope="col">Victory Points</th>
           </tr>
         </thead>
         {% for player in players %}
@@ -24,7 +23,6 @@
             <td>{{ player.league_points }}</td>
             <td>{{ player.victory_points_tally }}</td>
             <td>{{ player.games_played }}</td>
-            <td>{{ player.player_vp }}</td>
           </tr>
         </tbody>
         {% endfor %}
