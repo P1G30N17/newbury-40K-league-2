@@ -14,8 +14,7 @@ class Player(models.Model):
     player_vp = models.PositiveIntegerField(default=0)
 
     def get_absolute_url(self):
-        return reverse("player-detail", kwargs={"pk": self.pk})
-        
+        return reverse("player-detail", kwargs={"pk": self.pk})     
 
     def __str__(self):
         return self.name

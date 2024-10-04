@@ -43,7 +43,7 @@
                             {% endif %}
                             <li><a class="dropdown-item" href="#">My Matchups</a></li>
                             {% if request.user.is_authenticated  %}                         
-                            <li><a class="dropdown-item" href="{% url 'submit-results' request.user.id %}">Submit Results</a></li>
+                            <li><a class="dropdown-item" href="{% url 'submit-results' %}">Submit Results</a></li>
                             {% else %}
                             <li><a class="dropdown-item" href="{% url 'user-login' %}">Submit Results</a></li>
                             {% endif %}

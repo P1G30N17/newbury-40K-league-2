@@ -1,11 +1,11 @@
 from django.shortcuts import render, HttpResponse, redirect
-from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
+from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView, TemplateView
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
-from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.urls import reverse_lazy
 
 from . import models
+from .forms import SubmitResultsForm
 
 # Create your views here.
 def home(request):
@@ -52,13 +52,25 @@ class PlayerDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
         player = self.get_object()
         return self.request.user == player.user
 
-@login_required()
-def submit_results(request, pk):
-    if request.method == 'POST':
-        player_vp = request.POST.get('results')
-        models.Player.objects.update(player_vp=player_vp)
-        return redirect('home')
-    return render(request, 'league/submitresults.html')
+class SubmitResultsView(TemplateView):
+    template_name = 'league/submitresults.html'
+
+    def get(self, request):
+        form = SubmitResultsForm()
+        return render(request, self.template_name, {'form': form})
+
+    def post(self, request):
+        form = SubmitResultsForm(request.POST, instance=request.user)
+        if form.is_valid():
+            post = form.save(commit=False)
+            post.user = request.user
+            post.save()
+            input = form.cleaned_data['player_vp']
+            return redirect('home')
+
+        args = {'form': form, 'input': input}
+        return render(request, self.template_name, args)
+
     
 def about(request):
     return render(request, "league/about.html", {'title': 'About the Newbury 40K League'})
