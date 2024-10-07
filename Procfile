@@ -1,1 +1,1 @@
-web: gunicorn newbury-40k-league-2.0.wsgi
+web: gunicorn --pythonpath newbury-40k-league-2.0 newbury-40k-league-2.0.wsgi
