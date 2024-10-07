@@ -29,10 +29,14 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['8000-p1g30n17-newbury40kleag-0caiuqmos63.ws.codeinstitute-ide.net', '.herokuapp.com']
-CSRF_TRUSTED_ORIGINS = ['https://8000-p1g30n17-newbury40kleag-0caiuqmos63.ws.codeinstitute-ide.net']
-CSRF_ALLOWED_ORIGINS = ['https://8000-p1g30n17-newbury40kleag-0caiuqmos63.ws.codeinstitute-ide.net']
-CORS_ORIGINS_WHITELIST = ['https://8000-p1g30n17-newbury40kleag-0caiuqmos63.ws.codeinstitute-ide.net']
+ALLOWED_HOSTS = ['8000-p1g30n17-newbury40kleag-0caiuqmos63.ws.codeinstitute-ide.net', 
+'.herokuapp.com']
+CSRF_TRUSTED_ORIGINS = ['https://8000-p1g30n17-newbury40kleag-0caiuqmos63.ws.codeinstitute-ide.net', 
+'https://*.herokuapp.com']
+CSRF_ALLOWED_ORIGINS = ['https://8000-p1g30n17-newbury40kleag-0caiuqmos63.ws.codeinstitute-ide.net', 
+'https://*.herokuapp.com']
+CORS_ORIGINS_WHITELIST = ['https://8000-p1g30n17-newbury40kleag-0caiuqmos63.ws.codeinstitute-ide.net', 
+'https://*.herokuapp.com']
 
 
 # Application definition
