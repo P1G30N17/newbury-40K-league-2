@@ -1,1 +1,1 @@
-web: gunicorn newbury-40k-league-2.0.wsgi
+web: gunicorn config.wsgi.application.wsgi
