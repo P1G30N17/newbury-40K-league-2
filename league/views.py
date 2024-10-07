@@ -68,6 +68,7 @@ def submit(request, id):
   player.victory_points_tally += int(results)
   player.games_played += 1
   player.save()
+  messages.success(request, f"{player.name}, your results have been submitted successfully!")
   return HttpResponseRedirect(reverse('home'))
 
     

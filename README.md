@@ -1,131 +1,132 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Newbury 40K League 2.0
 
-Welcome James King,
+This web app is an updated version of my original project [Newbury 40K League](https://github.com/P1G30N17/newbury-40k-league), however it is a complete redesign and new build from the ground up. The intention of my app is to allow players to register themselves as a user and then sign up to play in the Newbury Warhammer 40K League, playing against other 40K players in and around Newbury. The app aims to generate player matchups, take in player scores from their matchups, and keep track of their scores, games played, and league points. This structured environment will make it easier for players to find opponents for games, along with incentivizing the user to play a better and more thoughtful as the stakes are higher with this new competitive layer of gameplay. 
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+![Launch Screen](https://github.com/P1G30N17/dnd-text-adventure/blob/main/media/launch-screen.png?raw=true)
 
-You can safely delete this README.md file or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **June 18, 2024**
+## User Stories
+- Having a game of 40K with local gamers has never been more fun!
+- I love being able to see how i'm doing competitively against my fellow Newbury 40K players.
+- Having opponents generated for me, means I don't have to find or ask awkwardly on various 40K FB pages or forums, as my opponents have also opted in for a gamealready.
+- I like how I'm able to register to play in the league, but also update my faction if I feel like changing things up.
 
-## Gitpod Reminders
+## Features 
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+The Newbury 40K League 2.0, holds a very simple premise, arrange and maintain a league based database and allow user game score submissions. However the backend allows for a great deal of user customisability. The user cans register an account and then sign up for the league, giving the name and their desired faction for their army, which they then play with in the league. Their opponents are generated from other willing players that have also done the same, giving players fair matchups, to which each player will submit their score and have the league database updated in realtime to reflect the wins and losses of each player, and give their position for all to see. The app was designed with the CRUD development cycle in mind and each user can create, update, and delete their account if they so wish it, this would then be seen as a withdrawal from the league, and this can only be done by each individual user as secured via user login credentials. 
 
-`python3 -m http.server`
+### Existing Features
 
-A blue button should appear to click: _Make Public_,
+- __The Home Page__
 
-Another blue button should appear to click: _Open Browser_.
+  - Here any user of the app can see the current league standings, and all current players and their factions who are registered for the league.
+  - It offers easy navigation around the site to the various pages through the navbar element.
+  - Users will also be given a Login or Register request on the right hand side of the navbar if they are not currently logged in.
+  - If the user is already logged in this Navbar element will display their user name and allow them to logout if they so wish it.
 
-To run a backend Python file, type `python3 app.py` if your Python file is named `app.py`, of course.
+![The Game](https://github.com/P1G30N17/dnd-text-adventure/blob/main/media/the-game.png?raw=true)
 
-A blue button should appear to click: _Make Public_,
+- __The Navbar__
 
-Another blue button should appear to click: _Open Browser_.
+  - Here the user can navigate to the various pages of the site.
 
-By Default, Gitpod gives you superuser security privileges. Therefore, you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+![Using Commands](https://github.com/P1G30N17/dnd-text-adventure/blob/main/media/using-commands.png?raw=true)
 
-To log into the Heroku toolbelt CLI:
+- __The League Table__
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+  - The League Table reflects all the information of registered players, this is not to be confused with registered users, as a user must first sign up to join the league before they will be refelcted in the table.
+  - The table tracks and reflects players results from games they have played and submitted via the Submit Results page.
+  - This gives players an easy to use and view update on their standind within the current league.
+  - This table is updated in real time with each player's results updating as soon as they are submitted, allowing for a more accurate representation of information to all players.
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you, so do not share it. If you accidentally make it public, you can create a new one with _Regenerate API Key_.
+![HUD Display](https://github.com/P1G30N17/dnd-text-adventure/blob/main/media/hud.png?raw=true)
 
-### Connecting your Mongo database
+- __The About page__ 
 
-- **Connect to Mongo CLI on a IDE**
-- navigate to your MongoDB Clusters Sandbox
-- click **"Connect"** button
-- select **"Connect with the MongoDB shell"**
-- select **"I have the mongo shell installed"**
-- choose **mongosh (2.0 or later)** for : **"Select your mongo shell version"**
-- choose option: **"Run your connection string in your command line"**
-- in the terminal, paste the copied code `mongo "mongodb+srv://<CLUSTER-NAME>.mongodb.net/<DBname>" --apiVersion 1 --username <USERNAME>`
-  - replace all `<angle-bracket>` keys with your own data
-- enter password _(will not echo **\*\*\*\*** on screen)_
+- Here the user can find all the relevant information regarding the league, such as rules for each game that all players must adhere to for a game to be considered legimate.
+  - A note must be taken into consideration however, that as humans may not be bound by strict rules in reality there is still the possibility that results submissions could be fake, or incorrect. (This could be adjusted by players submitting a request to the admin, or a two player validation system where both players need to submit the correct results of their opponents - A potential implementation in future updates.)
+- Updates to the league can also be posted here by the site admin, allowing users easy access to any future league updates or rules changes.
 
-------
+![Player message](https://github.com/P1G30N17/dnd-text-adventure/blob/main/media/player-message.png?raw=true)
 
-## Release History
+- __League__
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+- This navbar element contains a few drop down elements relevant to a registered player, and as such have login requirements(If the user is not logged in they will be taken to the relevant user login page)
+- If the user is logged in, they will be able to access:
+  - My Profile:
+    - 
+  - My Matchups:
+    - 
+  - Submit Results:
+    - 
+  - Register for League:
+    - 
 
-**June 18, 2024,** Add Mongo back into template
+- __User Portal__
 
-**June 14, 2024,** Temporarily remove Mongo until the key issue is resolved
+- On the far right hand side of the navbar element the user will see their profile portal if they are logged in, if they are not logged in the will be presented with a login or register option. This duel option allows for quick user access to either create an account, or log in to an existing one.
+- Once logged in the Login or Register option will be replaced with the user's chosen user name.
 
-**May 28 2024:** Fix Mongo and Links installs
+![Victory and Game Over state](https://github.com/P1G30N17/dnd-text-adventure/blob/main/media/game-over.png?raw=true)
 
-**April 26 2024:** Update node version to 16
+### Features Left to Implement
 
-**September 20 2023:** Update Python version to 3.9.17.
+- Auto generated matchups, to allow the database to generate random opponents from registered league players and present these to the user.
+- League points being implemented from a victory or a loss, this option will be submitted through the results submission page and will be relfected in the league table.
+- The ability for the league to run into pre definded seasons, ie 3 months at a time, at which time the current league will end, results will be saved (perhaps a hall of fame page to view past league results) and a new league will start with the users being able to decided if they wish to register for the new league via the register for league page.
+- Email automation, as users can link an email to their user accounts I would like to be able to give the user the option to be emailed about their generated opponents, and then give them the option to send an email asking their opponent for a time, date and place that they would like to have their game of Warhammer 40K. 
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+## Walkthrough
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+## Testing 
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+- 
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+### Bugs
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+- 
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+### Validator Testing 
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+- Python
+  - A few errors were found and some warnings were noted when passing through the official [(CI Python Linter](https://pep8ci.herokuapp.com/)
+    - 
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+### Unfixed Bugs
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+- 
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+## Deployment
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+1. **Sign Up/Login to Heroku**
+      - If you haven't already, sign up for a Heroku account at [Heroku's website](https://www.heroku.com/) or log in if you already have an account.
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+  2. **Create a New App on Heroku**
+       - Once logged in, navigate to your Heroku dashboard and click on the **New** button, then select **Create new app**.
+       - Choose a unique name for your app and select your region.
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+  3. **Connect GitHub Repository**
+       - After creating your app, go to the **Deploy** tab within your app's dashboard.
+       - Under the **Deployment method** section, select **GitHub** as the deployment method.
+       - Search for your GitHub repository in the **Connect to GitHub** section and click **Connect**.
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+  4. **Configure Deployment Options**
+       - Once connected, choose the branch you want to deploy (e.g. *main*) and optionally enable automatic deploys for future commits.
 
-------
+  5. **Select Framework**
+      - Since the DnD Text Adventure Game includes both Python and Node.js components, you need to specify the correct buildpacks for deployment. 
+       - Under the *Settings* tab of your Heroku app, navigate to the **Buildpacks** section and add the appropriate buildpacks for Python and Node.js. (Make sure that they are in this correct order, Python above Node.js)
+       - Also, add the following environment variables:
+       - **PORT** set to **8000** to specify the port on which your app will run.
 
-## FAQ about the uptime script
+  6. **Deploy Branch**
+       - After configuring the deployment options, manually deploy your application by clicking the **Deploy Branch** button.
 
-**Why have you added this script?**
+  7. **Monitor Deployment Progress**
+       - Heroku will start deploying your application from the selected GitHub branch. You can monitor the deployment progress from the activity log on the same page.
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+  8. **View Application**
+      - Once the deployment is complete, Heroku will provide you with a URL to access your deployed application. Click on **View** button to open your application in a new tab.
 
-**How will this affect me?**
+## Credits 
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
-
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
-
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
-
-**So….?**
-
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
-
-**Can I opt out?**
-
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
-
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
-
-**Anything more?**
-
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
-
----
-
-Happy coding!
+### Code
