@@ -8,6 +8,6 @@ urlpatterns = [
     path('player/<int:pk>/update', views.PlayerUpdateView.as_view(), name="player-update"),
     path('player/<int:pk>/delete', views.PlayerDeleteView.as_view(), name="player-delete"),
     path('player/<int:id>/submitresults', views.update, name="update"),
-    path('player/<int:id>/submit', views.submit, name='submit'),
+    path('player/<int:id>/submit', views.submit, name="submit"),
     path('about/', views.about, name="about"),
 ]
