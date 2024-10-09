@@ -67,6 +67,10 @@ def submit(request, id):
   player = Player.objects.get(id=id)
   player.victory_points_tally += int(results)
   player.games_played += 1
+  if request.POST.get('victory') is not None:
+    player.league_points += 2
+  else:
+    player.league_points += 1
   player.save()
   messages.success(request, f"{player.name}, your results have been submitted successfully!")
   return HttpResponseRedirect(reverse('home'))
