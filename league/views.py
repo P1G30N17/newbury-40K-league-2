@@ -1,4 +1,4 @@
-from django.shortcuts import render, HttpResponse, redirect
+from django.shortcuts import render, HttpResponse, redirect, get_object_or_404
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView, TemplateView
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.contrib import messages
@@ -23,10 +23,16 @@ class PlayerListView(ListView):
     context_object_name = 'players'
 
 class PlayerDetailView(DetailView):
+    """
+    Displays an individual player's details
+    """
     model = models.Player
     fields = ['name', 'faction', 'games_played', 'league_points', 'victory_points_tally']
 
 class RegisterView(LoginRequiredMixin, CreateView):
+    """
+    Renders the league registration form for logged in user
+    """
     model = models.Player
     fields = ['name', 'faction']
 
@@ -35,6 +41,9 @@ class RegisterView(LoginRequiredMixin, CreateView):
         return super().form_valid(form)
 
 class PlayerUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
+    """
+    Allows a logged in user to update their player profile
+    """
     model = models.Player
     fields = ['name', 'faction']
 
@@ -47,6 +56,9 @@ class PlayerUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
         return super().form_valid(form)
 
 class PlayerDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
+    """
+    Allows a logged in user to delete their player profile
+    """
     model = models.Player
     success_url = reverse_lazy('home')
 
@@ -54,17 +66,23 @@ class PlayerDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
         player = self.get_object()
         return self.request.user == player.user
 
-def update(request, id):
-  player = Player.objects.get(id=id)
+def update(request, pk):
+  """
+  Renders the players score submission page
+  """
+  player = Player.objects.get(pk=pk)  
   template_name = "league/submitresults.html"
   context = {
     'player': player,
   }
   return render(request, "league/submitresults.html", context)
 
-def submit(request, id):
+def submit(request, pk):
+  """
+  Handles the score submission post and updates Player model accordingly
+  """  
   results = request.POST['results']
-  player = Player.objects.get(id=id)
+  player = Player.objects.get(pk=pk)
   player.victory_points_tally += int(results)
   player.games_played += 1
   if request.POST.get('victory') is not None:
@@ -77,4 +95,7 @@ def submit(request, id):
 
     
 def about(request):
+    """
+    Renders the About page
+    """
     return render(request, "league/about.html", {'title': 'About the Newbury 40K League'})

@@ -35,22 +35,24 @@
                             aria-expanded="false">
                             League
                         </a>
-                        <ul class="dropdown-menu">  
-                            {% if request.user.is_authenticated  %}                         
-                            <li><a class="dropdown-item" href="{% url 'player-detail' request.user.id %}">My Profile</a></li>
+                        <ul class="dropdown-menu">
+                            {% if request.user.is_authenticated  %}
+                            <li><a class="dropdown-item" href="{% url 'player-detail' request.user.id %}">My Profile</a>
+                            </li>
                             {% else %}
                             <li><a class="dropdown-item" href="{% url 'user-login' %}">My Profile</a></li>
                             {% endif %}
                             <li><a class="dropdown-item" href="#">My Matchups</a></li>
-                            {% if request.user.is_authenticated  %}                         
-                            <li><a class="dropdown-item" href="{% url 'update' request.user.id %}">Submit Results</a></li>
+                            {% if request.user.is_authenticated  %}
+                            <li><a class="dropdown-item" href="{% url 'update' request.user.id %}">Submit Results</a>
+                            </li>
                             {% else %}
                             <li><a class="dropdown-item" href="{% url 'user-login' %}">Submit Results</a></li>
                             {% endif %}
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
-                            <li><a class="dropdown-item" href="{% url 'player-register' %}">Register for League</a></li>                         
+                            <li><a class="dropdown-item" href="{% url 'player-register' %}">Register for League</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -74,7 +76,7 @@
         </div>
     </nav>
 
-    <div class="container col-8 mt-4">
+    <div class="container col-12 mt-4">
         {% if messages %}
         {% for message in messages %}
         <div class="alert alert-{{ message.tags }}">{{ message }}</div>
@@ -82,6 +84,23 @@
         {% endif %}
         {% block content %}
         {% endblock content %}
+    </div>
+
+    <div class="container">
+        <footer class="py-3 my-4">
+            <div class="p-1 text-center bg-body-tertiary">
+                <h5 class="mb-3">Find a local club in Newbury</h5>
+            </div>
+            <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+                <li class="nav-item"><a href="https://www.facebook.com/groups/407728405946483" target="_blank"
+                        class="nav-link px-2 text-body-secondary">Newbury Gaming Club - Mondays</a></li>
+                <li class="nav-item"><a href="https://www.facebook.com/groups/331001307708399" target="_blank"
+                        class="nav-link px-2 text-body-secondary">GitMob Gaming - Wednesdays</a></li>
+                <li class="nav-item"><a href="https://www.facebook.com/groups/1453382895238244" target="_blank"
+                        class="nav-link px-2 text-body-secondary">Gobbo Gaming - Fridays</a></li>
+            </ul>
+            <p class="text-center text-body-secondary">© 2024 James King</p>
+        </footer>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
