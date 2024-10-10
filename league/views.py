@@ -55,7 +55,7 @@ class PlayerUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
         form.instance.user = self.request.user
         return super().form_valid(form)
 
-class PlayerDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
+class PlayerDeleteView(LoginRequiredMixin, DeleteView):
     """
     Allows a logged in user to delete their player profile
     """

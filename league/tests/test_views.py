@@ -50,7 +50,7 @@ class TestViews(TestCase):
 
         response = self.client.delete(self.delete_url)
         self.assertEqual(response.status_code, 302)
-        # This DELETE test is not working as it should, should be a 204 response, but it seems to be deleting and then redirecting for the user to login.
+        # This DELETE test is not working as it should, should be a 204 response, but it seems to be deleting and then redirecting the user to login.
 
     def test_project_UPDATE_player_updates_profile(self):
         player = Player.objects.create(user=self.user, name="test-player",
