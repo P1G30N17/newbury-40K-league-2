@@ -23,13 +23,13 @@ The Newbury 40K League 2.0, holds a very simple premise, arrange and maintain a 
   - Users will also be given a Login or Register request on the right hand side of the navbar if they are not currently logged in.
   - If the user is already logged in this Navbar element will display their user name and allow them to logout if they so wish it.
 
-![The Game](https://github.com/P1G30N17/dnd-text-adventure/blob/main/media/the-game.png?raw=true)
+![The Hompage](https://github.com/P1G30N17/dnd-text-adventure/blob/main/media/the-game.png?raw=true)
 
 - __The Navbar__
 
   - Here the user can navigate to the various pages of the site.
 
-![Using Commands](https://github.com/P1G30N17/dnd-text-adventure/blob/main/media/using-commands.png?raw=true)
+![The Navbar](https://github.com/P1G30N17/dnd-text-adventure/blob/main/media/using-commands.png?raw=true)
 
 - __The League Table__
 
@@ -38,7 +38,7 @@ The Newbury 40K League 2.0, holds a very simple premise, arrange and maintain a 
   - This gives players an easy to use and view update on their standind within the current league.
   - This table is updated in real time with each player's results updating as soon as they are submitted, allowing for a more accurate representation of information to all players.
 
-![HUD Display](https://github.com/P1G30N17/dnd-text-adventure/blob/main/media/hud.png?raw=true)
+![League Table](https://github.com/P1G30N17/dnd-text-adventure/blob/main/media/hud.png?raw=true)
 
 - __The About page__ 
 
@@ -46,7 +46,7 @@ The Newbury 40K League 2.0, holds a very simple premise, arrange and maintain a 
   - A note must be taken into consideration however, that as humans may not be bound by strict rules in reality there is still the possibility that results submissions could be fake, or incorrect. (This could be adjusted by players submitting a request to the admin, or a two player validation system where both players need to submit the correct results of their opponents - A potential implementation in future updates.)
 - Updates to the league can also be posted here by the site admin, allowing users easy access to any future league updates or rules changes.
 
-![Player message](https://github.com/P1G30N17/dnd-text-adventure/blob/main/media/player-message.png?raw=true)
+![About Page](https://github.com/P1G30N17/dnd-text-adventure/blob/main/media/player-message.png?raw=true)
 
 - __League__
 
@@ -54,27 +54,45 @@ The Newbury 40K League 2.0, holds a very simple premise, arrange and maintain a 
 - If the user is logged in, they will be able to access:
   - My Profile:
     - This will show the user their player profile once they have registered for the league, these fields are their selected name, faction of choice, games played, league points and a running tally of their submitted victory points. Player's can also opt to update their player profile or delete it if they so wish it, taking them to the relevant pages.
+
+    ![My Profile](https://github.com/P1G30N17/dnd-text-adventure/blob/main/media/player-message.png?raw=true)
   - My Matchups:
     - This is a feature that is still to be implemented, but in the future it will display two random opponents who the user must play within the month for their official league games. Currently it just shows a random opponent pulled from the database, with their name and faction.
+
+    ![My Matchups](https://github.com/P1G30N17/dnd-text-adventure/blob/main/media/player-message.png?raw=true)
   - Submit Results:
     - Here the user, once registered for the league can submit their results from a game, as victory points in Warhammer 40K have a maximum of 100 that can be scored the user can only enter a score between 0 - 100. The user must also select if they won their game or not via the toggle button, yes being 2 league points and no being only 1 league point.
+
+    ![Submit Results](https://github.com/P1G30N17/dnd-text-adventure/blob/main/media/player-message.png?raw=true)
   - Register for League:
     - Once a user has created a user account, they can then register for the league through this link, giving them the option to enter their name and faction that they wish to play with in the league.
+
+    ![Register for League](https://github.com/P1G30N17/dnd-text-adventure/blob/main/media/player-message.png?raw=true)
 
 - __Player Update__
 
   - The player can update their name and faction from this page and it will then be reflected on the league table on the home page.
 
+![Player Update](https://github.com/P1G30N17/dnd-text-adventure/blob/main/media/player-message.png?raw=true)
+
 - __Player Delete__
 
   - The Player can opt to delete their player account which will remove their current name, faction and all results from the league. However this does not delete their user account and the player can then reregister for the league if they wish to start on a new slate with a new name and faction.
+
+![Player Update](https://github.com/P1G30N17/dnd-text-adventure/blob/main/media/player-message.png?raw=true)
 
 - __User Portal__
 
 - On the far right hand side of the navbar element the user will see their profile portal if they are logged in, if they are not logged in the will be presented with a login or register option. This duel option allows for quick user access to either create an account, or log in to an existing one.
 - Once logged in the Login or Register option will be replaced with the user's chosen user name.
 
-![Victory and Game Over state](https://github.com/P1G30N17/dnd-text-adventure/blob/main/media/game-over.png?raw=true)
+![User Portal](https://github.com/P1G30N17/dnd-text-adventure/blob/main/media/game-over.png?raw=true)
+
+- __Footer__
+  - The footer just gives users url links to the various clubs running in Newbury where players could play their games if they so wish, these links are to their respective clubs's Facebook group pages.
+
+![User Portal](https://github.com/P1G30N17/dnd-text-adventure/blob/main/media/game-over.png?raw=true)
+
 
 ### Features Left to Implement
 
@@ -87,9 +105,9 @@ The Newbury 40K League 2.0, holds a very simple premise, arrange and maintain a 
 - __Automated Testing__
   
   - I made a few automated tests to the best of my knowledge of which almost all passed. The last two tests were with regards to the player delete and player update views. 
-  ![URL Tests](https://github.com/P1G30N17/dnd-text-adventure/blob/main/media/game-over.png?raw=true)
-  ![Views Test P1](https://github.com/P1G30N17/dnd-text-adventure/blob/main/media/game-over.png?raw=true)
-  ![Views Test p2](https://github.com/P1G30N17/dnd-text-adventure/blob/main/media/game-over.png?raw=true)
+  ![URL Tests](https://github.com/P1G30N17/newbury-40K-league-2.0/blob/main/static/media/Url%20tests.png?raw=true)
+  ![Views Test P1](https://github.com/P1G30N17/newbury-40K-league-2.0/blob/main/static/media/Views%20tests%20p1.png?raw=true)
+  ![Views Test p2](https://github.com/P1G30N17/newbury-40K-league-2.0/blob/main/static/media/Views%20tests%20p2.png?raw=true)
 
 - __Manual Testing__
 
