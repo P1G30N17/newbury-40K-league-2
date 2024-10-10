@@ -53,13 +53,21 @@ The Newbury 40K League 2.0, holds a very simple premise, arrange and maintain a 
 - This navbar element contains a few drop down elements relevant to a registered player, and as such have login requirements(If the user is not logged in they will be taken to the relevant user login page)
 - If the user is logged in, they will be able to access:
   - My Profile:
-    - 
+    - This will show the user their player profile once they have registered for the league, these fields are their selected name, faction of choice, games played, league points and a running tally of their submitted victory points. Player's can also opt to update their player profile or delete it if they so wish it, taking them to the relevant pages.
   - My Matchups:
-    - 
+    - This is a feature that is still to be implemented, but in the future it will display two random opponents who the user must play within the month for their official league games. Currently it just shows a random opponent pulled from the database, with their name and faction.
   - Submit Results:
-    - 
+    - Here the user, once registered for the league can submit their results from a game, as victory points in Warhammer 40K have a maximum of 100 that can be scored the user can only enter a score between 0 - 100. The user must also select if they won their game or not via the toggle button, yes being 2 league points and no being only 1 league point.
   - Register for League:
-    - 
+    - Once a user has created a user account, they can then register for the league through this link, giving them the option to enter their name and faction that they wish to play with in the league.
+
+- __Player Update__
+
+  - The player can update their name and faction from this page and it will then be reflected on the league table on the home page.
+
+- __Player Delete__
+
+  - The Player can opt to delete their player account which will remove their current name, faction and all results from the league. However this does not delete their user account and the player can then reregister for the league if they wish to start on a new slate with a new name and faction.
 
 - __User Portal__
 
@@ -71,19 +79,29 @@ The Newbury 40K League 2.0, holds a very simple premise, arrange and maintain a 
 ### Features Left to Implement
 
 - Auto generated matchups, to allow the database to generate random opponents from registered league players and present these to the user.
-- League points being implemented from a victory or a loss, this option will be submitted through the results submission page and will be relfected in the league table.
 - The ability for the league to run into pre definded seasons, ie 3 months at a time, at which time the current league will end, results will be saved (perhaps a hall of fame page to view past league results) and a new league will start with the users being able to decided if they wish to register for the new league via the register for league page.
 - Email automation, as users can link an email to their user accounts I would like to be able to give the user the option to be emailed about their generated opponents, and then give them the option to send an email asking their opponent for a time, date and place that they would like to have their game of Warhammer 40K. 
 
-## Walkthrough
-
 ## Testing 
 
-- 
+- __Automated Testing__
+  
+  - I made a few automated tests to the best of my knowledge of which almost all passed. The last two tests were with regards to the player delete and player update views. 
+  ![URL Tests](https://github.com/P1G30N17/dnd-text-adventure/blob/main/media/game-over.png?raw=true)
+  ![Views Test P1](https://github.com/P1G30N17/dnd-text-adventure/blob/main/media/game-over.png?raw=true)
+  ![Views Test p2](https://github.com/P1G30N17/dnd-text-adventure/blob/main/media/game-over.png?raw=true)
+
+- __Manual Testing__
+
+  - As stated some of my automated tests were insufficient and so I manually tested the other views and functions that I could not run automated tests on.
+    - The delete view was proven to work correctly, once the player opted to delete their player profile, their player record was correctly deleted from the league model and no longer reflected on the league table on the homepage.
+    - The update view was proven to work correctly, once the player opted to update their player profile, their player record was correctly updated in the league model and the league table on the home page correctly reflected this update.
+    - The submit results function and update function worked in tandem and successfully did what they were intended, firstly taking the user to the correct submitresults.html page and then processing the player's input and POSTing it correctly to the database. This was then reflected correctly on the league table on the home page. 
+
 
 ### Bugs
 
-- 
+- Currently if a user deletes their profile and then reregisters for the league, the player detail view is incorrectly linking to their old url. If the player was player 10 in the registered players and then deletes and reregisters for the league, their player profile is now still */player/10 but if you manual increment their player id to */player/11 you will be taken correctly to their profile. Upon which all the user functinality remains the same. Currently I am trying to address this issue as it is most serious, and I think it pertains to either an incorrect delete cascade method in the model or the user pk being incorrectly found and passed into the URL.
 
 ### Validator Testing 
 
@@ -93,7 +111,7 @@ The Newbury 40K League 2.0, holds a very simple premise, arrange and maintain a 
 
 ### Unfixed Bugs
 
-- 
+- Currently their is still the user delete bug as previously described in the bugs section. 
 
 ## Deployment
 
@@ -112,21 +130,19 @@ The Newbury 40K League 2.0, holds a very simple premise, arrange and maintain a 
   4. **Configure Deployment Options**
        - Once connected, choose the branch you want to deploy (e.g. *main*) and optionally enable automatic deploys for future commits.
 
-  5. **Select Framework**
-      - Since the DnD Text Adventure Game includes both Python and Node.js components, you need to specify the correct buildpacks for deployment. 
-       - Under the *Settings* tab of your Heroku app, navigate to the **Buildpacks** section and add the appropriate buildpacks for Python and Node.js. (Make sure that they are in this correct order, Python above Node.js)
-       - Also, add the following environment variables:
-       - **PORT** set to **8000** to specify the port on which your app will run.
-
-  6. **Deploy Branch**
+  5. **Deploy Branch**
        - After configuring the deployment options, manually deploy your application by clicking the **Deploy Branch** button.
 
-  7. **Monitor Deployment Progress**
+  6. **Monitor Deployment Progress**
        - Heroku will start deploying your application from the selected GitHub branch. You can monitor the deployment progress from the activity log on the same page.
 
-  8. **View Application**
+  7. **View Application**
       - Once the deployment is complete, Heroku will provide you with a URL to access your deployed application. Click on **View** button to open your application in a new tab.
 
 ## Credits 
 
-### Code
+- All work is my own original code and models, with the exception of the following:
+  - Boostrap has been used to quickly and easily build the frontend of my app, credit goes to [Get Bootstrap](https://getbootstrap.com).
+  - Crispyforms to easily display any form view, credit goes to [CrispyForms](https://django-crispy-forms.readthedocs.io/en/latest/#)
+  - Tutor support from CodeInstitute with regards to deploying my project on Heroku and with an error was having with the submit results function not updating the database correctly.
+
