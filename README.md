@@ -178,6 +178,7 @@ The Newbury 40K League 2.0, holds a very simple premise, arrange and maintain a 
   ![Notepads](https://github.com/P1G30N17/newbury-40K-league-2.0/blob/main/static/media/notepad-view.png?raw=true)
 
   - SmartPhone:
+  
   ![SmartPhones](https://github.com/P1G30N17/newbury-40K-league-2.0/blob/main/static/media/smartphone-view.png?raw=true)
 
 ### Unfixed Bugs
