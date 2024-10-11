@@ -2,7 +2,7 @@
 
 This web app is an updated version of my original project [Newbury 40K League](https://github.com/P1G30N17/newbury-40k-league), however it is a complete redesign and new build from the ground up. The intention of my app is to allow players to register themselves as a user and then sign up to play in the Newbury Warhammer 40K League, playing against other 40K players in and around Newbury. The app aims to generate player matchups, take in player scores from their matchups, and keep track of their scores, games played, and league points. This structured environment will make it easier for players to find opponents for games, along with incentivizing the user to play a better and more thoughtful as the stakes are higher with this new competitive layer of gameplay. 
 
-![Launch Screen](https://github.com/P1G30N17/dnd-text-adventure/blob/main/media/launch-screen.png?raw=true)
+![Launch Screen](https://github.com/P1G30N17/newbury-40K-league-2.0/blob/main/static/media/homepage.png?raw=true)
 
 ## User Stories
 - Having a game of 40K with local gamers has never been more fun!
@@ -168,6 +168,13 @@ The Newbury 40K League 2.0, holds a very simple premise, arrange and maintain a 
 ![Lighthouse Score](https://github.com/P1G30N17/newbury-40K-league-2.0/blob/main/static/media/lighthouse.png?raw=true)
 
 - The various web browsers the project was tested on had mostly optimal results, with little to no errors between all 3.
+
+### Responsive Test
+
+- I have validated that the app is responsive on most devices displays correctly on various web browsers, such as Chrome, Safari and Mozilla.
+
+![Notepads](https://github.com/P1G30N17/newbury-40K-league-2.0/blob/main/static/media/notepad-view.png?raw=true)
+![SmartPhones](https://github.com/P1G30N17/newbury-40K-league-2.0/blob/main/static/media/smartphone-view.png?raw=true)
 
 ### Unfixed Bugs
 
