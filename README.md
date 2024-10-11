@@ -51,6 +51,9 @@ The Newbury 40K League 2.0, holds a very simple premise, arrange and maintain a 
 - __League__
 
 - This navbar element contains a few drop down elements relevant to a registered player, and as such have login requirements(If the user is not logged in they will be taken to the relevant user login page)
+
+![Navbar](https://github.com/P1G30N17/newbury-40K-league-2.0/blob/main/static/media/navbar.png?raw=true)
+
 - If the user is logged in, they will be able to access:
   - My Profile:
     - This will show the user their player profile once they have registered for the league, these fields are their selected name, faction of choice, games played, league points and a running tally of their submitted victory points. Player's can also opt to update their player profile or delete it if they so wish it, taking them to the relevant pages.
@@ -76,11 +79,11 @@ The Newbury 40K League 2.0, holds a very simple premise, arrange and maintain a 
 
     ![Register for League](https://github.com/P1G30N17/newbury-40K-league-2.0/blob/main/static/media/league-registration.png?raw=true)
 
-- __Player Update__
+  - Player Update
 
   - The player can update their name and faction from this page and it will then be reflected on the league table on the home page.
 
-![Player Update](https://github.com/P1G30N17/newbury-40K-league-2.0/blob/main/static/media/player-update.png?raw=true)
+    ![Player Update](https://github.com/P1G30N17/newbury-40K-league-2.0/blob/main/static/media/player-update.png?raw=true)
 
 - __Player Delete__
 
@@ -96,7 +99,7 @@ The Newbury 40K League 2.0, holds a very simple premise, arrange and maintain a 
 
 ![User Login](https://github.com/P1G30N17/newbury-40K-league-2.0/blob/main/static/media/user-login.png?raw=true)
 
-![Player Register](https://github.com/P1G30N17/newbury-40K-league-2.0/blob/main/static/media/league-registration.png?raw=true)
+![User Register](https://github.com/P1G30N17/newbury-40K-league-2.0/blob/main/static/media/account-registration.png?raw=true)
 
 - Once logged in the Login or Register option will be replaced with the user's chosen user name and the option to logout.
 
@@ -127,8 +130,22 @@ The Newbury 40K League 2.0, holds a very simple premise, arrange and maintain a 
 
   - As stated some of my automated tests were insufficient and so I manually tested the other views and functions that I could not run automated tests on.
     - The delete view was proven to work correctly, once the player opted to delete their player profile, their player record was correctly deleted from the league model and no longer reflected on the league table on the homepage.
+
+    ![Delete Player](https://github.com/P1G30N17/newbury-40K-league-2.0/blob/main/static/media/show-delete-proof.png?raw=true)
+    ![Delete Player Warning](https://github.com/P1G30N17/newbury-40K-league-2.0/blob/main/static/media/player-deletion.png?raw=true)
+    ![Player Deleted Successfully](https://github.com/P1G30N17/newbury-40K-league-2.0/blob/main/static/media/player-deletion-success.png?raw=true)
+
     - The update view was proven to work correctly, once the player opted to update their player profile, their player record was correctly updated in the league model and the league table on the home page correctly reflected this update.
+    
+    ![Update Player Before](https://github.com/P1G30N17/newbury-40K-league-2.0/blob/main/static/media/player-update-proof.png?raw=true)
+    ![Player Update Form](https://github.com/P1G30N17/newbury-40K-league-2.0/blob/main/static/media/player-update.png?raw=true)
+    ![Player Update After](https://github.com/P1G30N17/newbury-40K-league-2.0/blob/main/static/media/player-update-success.png?raw=true)
+
     - The submit results function and update function worked in tandem and successfully did what they were intended, firstly taking the user to the correct submitresults.html page and then processing the player's input and POSTing it correctly to the database. This was then reflected correctly on the league table on the home page. 
+
+    ![Unsubmitted Results](https://github.com/P1G30N17/newbury-40K-league-2.0/blob/main/static/media/homepage.png?raw=true)
+    ![Results Submission Form](https://github.com/P1G30N17/newbury-40K-league-2.0/blob/main/static/media/submit-results.png?raw=true)
+    ![Results Submitted Successfully](https://github.com/P1G30N17/newbury-40K-league-2.0/blob/main/static/media/results-success.png?raw=true)
 
 
 ### Bugs
@@ -138,8 +155,7 @@ The Newbury 40K League 2.0, holds a very simple premise, arrange and maintain a 
 ### Validator Testing 
 
 - Python
-  - A few errors were found and some warnings were noted when passing through the official [(CI Python Linter](https://pep8ci.herokuapp.com/)
-    - 
+  - All my python files were passed through [CI Python Linter](https://pep8ci.herokuapp.com/) and all errors and warnings were adressed.
 
 ### Unfixed Bugs
 

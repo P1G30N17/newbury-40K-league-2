@@ -29,14 +29,14 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['.codeinstitute-ide.net', 
-'.herokuapp.com']
-CSRF_TRUSTED_ORIGINS = ['https://*.codeinstitute-ide.net', 
-'https://*.herokuapp.com']
-CSRF_ALLOWED_ORIGINS = ['https://*.codeinstitute-ide.net', 
-'https://*.herokuapp.com']
-CORS_ORIGINS_WHITELIST = ['https://*.codeinstitute-ide.net', 
-'https://*.herokuapp.com']
+ALLOWED_HOSTS = ['.codeinstitute-ide.net',
+                 '.herokuapp.com']
+CSRF_TRUSTED_ORIGINS = ['https://*.codeinstitute-ide.net',
+                        'https://*.herokuapp.com']
+CSRF_ALLOWED_ORIGINS = ['https://*.codeinstitute-ide.net',
+                        'https://*.herokuapp.com']
+CORS_ORIGINS_WHITELIST = ['https://*.codeinstitute-ide.net',
+                          'https://*.herokuapp.com']
 
 
 # Application definition
@@ -49,11 +49,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    #local apps
+    # local apps
     'league',
     'users',
 
-    #third party apps
+    # third party apps
     'crispy_forms',
     'crispy_bootstrap4',
 ]
@@ -110,16 +110,20 @@ DATABASES = {
 
 AUTH_PASSWORD_VALIDATORS = [
     {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+        'NAME': 'django.contrib.auth.password_validation.'
+        'UserAttributeSimilarityValidator',
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+        'NAME': 'django.contrib.auth.password_validation.'
+        'MinimumLengthValidator',
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+        'NAME': 'django.contrib.auth.password_validation.'
+        'CommonPasswordValidator',
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+        'NAME': 'django.contrib.auth.password_validation.'
+        'NumericPasswordValidator',
     },
 ]
 

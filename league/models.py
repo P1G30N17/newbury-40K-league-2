@@ -3,6 +3,8 @@ from django.contrib.auth.models import User
 from django.urls import reverse
 
 # Create your models here.
+
+
 class Player(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     name = models.CharField(max_length=50)
@@ -13,9 +15,7 @@ class Player(models.Model):
     victory_points_tally = models.PositiveIntegerField(default=0)
 
     def get_absolute_url(self):
-        return reverse("player-detail", kwargs={"pk": self.pk})     
+        return reverse("player-detail", kwargs={"pk": self.pk})
 
     def __str__(self):
         return self.name
-
-    
