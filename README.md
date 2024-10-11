@@ -156,6 +156,18 @@ The Newbury 40K League 2.0, holds a very simple premise, arrange and maintain a 
 
 - Python
   - All my python files were passed through [CI Python Linter](https://pep8ci.herokuapp.com/) and all errors and warnings were adressed.
+- HTML 
+  - The page source codes were all passed into [HTML Validator](https://validator.w3.org/nu/) and no errors or warnings were given.
+- CSS
+  - The CSS for this project was rather small due to Bootstrap being used, nonetheless the CSS from the project was passed into [CSS Validator](https://jigsaw.w3.org/css-validator/) and no errors or warnings were given.
+
+### Web Browser Testing
+
+- The project obtained a great lighthouse rating with the Google Lighthouse Dev Tool.
+
+![Lighthouse Score](https://github.com/P1G30N17/newbury-40K-league-2.0/blob/main/static/media/lighthouse.png?raw=true)
+
+- The various web browsers the project was tested on had mostly optimal results, with little to no errors between all 3.
 
 ### Unfixed Bugs
 
