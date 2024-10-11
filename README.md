@@ -61,9 +61,9 @@ The Newbury 40K League 2.0, holds a very simple premise, arrange and maintain a 
     ![My Profile](https://github.com/P1G30N17/newbury-40K-league-2.0/blob/main/static/media/player-profile.png?raw=true)
 
   - My Matchups:
-    - This is a feature that is still to be implemented, but in the future it will display two random opponents who the user must play within the month for their official league games. Currently it just shows a random opponent pulled from the database, with their name and faction.
+    - This is a feature that is still to be implemented, but in the future it will display two random opponents who the user must play within the month for their official league games.
 
-    ![My Matchups](#)
+    ![My Matchups](https://github.com/P1G30N17/newbury-40K-league-2.0/blob/main/static/media/matchups.png?raw=true)
 
   - Submit Results:
     - Here the user, once registered for the league can submit their results from a game, as victory points in Warhammer 40K have a maximum of 100 that can be scored the user can only enter a score between 0 - 100. The user must also select if they won their game or not via the toggle button, yes being 2 league points and no being only 1 league point.

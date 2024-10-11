@@ -110,6 +110,14 @@ def submit(request, pk):
     return HttpResponseRedirect(reverse('home'))
 
 
+def matchups(request):
+    """
+    Renders the Matchups Page
+    """
+    return render(
+      request, "league/matchups.html", {'title': 'Your League Matchups'})
+
+
 def about(request):
     """
     Renders the About page

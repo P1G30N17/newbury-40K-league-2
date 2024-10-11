@@ -9,5 +9,6 @@ urlpatterns = [
     path('player/<int:pk>/delete', views.PlayerDeleteView.as_view(), name="player-delete"),
     path('player/<int:pk>/submitresults', views.update, name="update"),
     path('player/<int:pk>/submit', views.submit, name="submit"),
+    path('matchups/', views.matchups, name="matchups"),
     path('about/', views.about, name="about"),
 ]
