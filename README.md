@@ -81,7 +81,7 @@ The Newbury 40K League 2.0, holds a very simple premise, arrange and maintain a 
 
   - Player Update
 
-  - The player can update their name and faction from this page and it will then be reflected on the league table on the home page.
+    - The player can update their name and faction from this page and it will then be reflected on the league table on the home page.
 
     ![Player Update](https://github.com/P1G30N17/newbury-40K-league-2.0/blob/main/static/media/player-update.png?raw=true)
 
@@ -173,8 +173,12 @@ The Newbury 40K League 2.0, holds a very simple premise, arrange and maintain a 
 
 - I have validated that the app is responsive on most devices displays correctly on various web browsers, such as Chrome, Safari and Mozilla.
 
-![Notepads](https://github.com/P1G30N17/newbury-40K-league-2.0/blob/main/static/media/notepad-view.png?raw=true)
-![SmartPhones](https://github.com/P1G30N17/newbury-40K-league-2.0/blob/main/static/media/smartphone-view.png?raw=true)
+  - NotePad:
+
+  ![Notepads](https://github.com/P1G30N17/newbury-40K-league-2.0/blob/main/static/media/notepad-view.png?raw=true)
+
+  - SmartPhone:
+  ![SmartPhones](https://github.com/P1G30N17/newbury-40K-league-2.0/blob/main/static/media/smartphone-view.png?raw=true)
 
 ### Unfixed Bugs
 
