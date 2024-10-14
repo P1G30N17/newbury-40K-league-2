@@ -215,6 +215,8 @@ The Newbury 40K League 2.0, holds a very simple premise, arrange and maintain a 
 
 - All work is my own original code and models, with the exception of the following:
   - Boostrap has been used to quickly and easily build the frontend of my app, credit goes to [Get Bootstrap](https://getbootstrap.com).
+  - Django frameworks was used to create this project, credit goes to [Django Project](https://www.djangoproject.com/).
+  - Heroku was used in the deployment of the final app version [Heroku](https://heroku.com).
   - Crispyforms to easily display any form view, credit goes to [CrispyForms](https://django-crispy-forms.readthedocs.io/en/latest/#).
   - Tutor support from CodeInstitute with regards to deploying my project on Heroku and with an error was having with the submit results function not updating the database correctly.
   - Favicon generated using [FavIcon](https://favicon.io/).
